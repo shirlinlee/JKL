@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="css/init.css" />
+    <link rel="stylesheet" href="css/calc.css" />
+    <title>JKL - 運費試算</title>
+</head>
+
+<body>
+    <div class="wrapper wrapper_02" id="app">
+        <h1>
+            <!-- 國際運費試算器 -->
+        </h1>
+        <div class="text">
+            請選擇單位：</div>
+        <select class="volume_select">
+            <option selected="selected" value="0">吋(INCH)</option>
+            <option value="1">公分(CM)</option>
+        </select>
+
+        <input class="length" placeholder="長" type="number" />X
+        <input class="width" placeholder="寬" type="number" />X
+        <input class="height" placeholder="高" type="number" />
+
+        <br />
+        <div class="text">
+            請選擇單位：</div>
+        <select class="weight_select">
+            <option selected="selected" value="0">磅(Lbs)</option>
+            <option value="1">公斤(Kg)</option>
+        </select>
+
+        <input class="weight" placeholder="重量" type="number" />
+
+        <br />
+        <div class="calulate_02">
+            試算</div>
+        <br />
+        <span style="color: #666666; font-size: xx-small;"><i>體積磅數=</i></span><br />
+        <div class="v_result rr">
+        </div>
+        <br />
+        <span style="color: #666666; font-size: xx-small;"><i>重量磅數=</i></span><br />
+        <div class="w_result rr">
+        </div>
+        <div class="text">
+            國際運費：</div>
+        <div class="total">
+        </div>
+        <select class="store_select">
+            <option selected="selected" value="0">加州</option>
+            <option value="1">免稅州</option>
+        </select>
+
+        <br />
+        <div>
+            <br />
+            <br />
+            <br /></div>
+        <div style="display: none;">
+            <div class="spex">
+                NT 380</div>
+            <div class="spex">
+                NT 500</div>
+            <div class="spex">
+                NT 630</div>
+            <div class="spex">
+                NT 800</div>
+            <div class="spex">
+                NT 1,000</div>
+            <div class="spex">
+                NT 1,000</div>
+            <div class="spex">
+                NT 1,050</div>
+            <div class="spex">
+                NT 1,200</div>
+            <div class="spex">
+                NT 1,350</div>
+            <div class="spex">
+                NT 1,500</div>
+            <div class="spex">
+                NT 1,600</div>
+            <div class="spex">
+                NT 1,600</div>
+            <div class="spex">
+                NT 1,700</div>
+            <div class="spex">
+                NT 1,700</div>
+            <div class="spex">
+                NT 1,800</div>
+            <div class="spex">
+                NT 1,900</div>
+            <div class="spex">
+                NT 2,000</div>
+            <div class="spex">
+                NT 2,100</div>
+            <div class="spex">
+                NT 2,200</div>
+            <div class="spex">
+                NT 2,200</div>
+            <div class="spex">
+                NT 2,300</div>
+            <div class="spex">
+                NT 2,400</div>
+            <div class="spex">
+                NT 2,500</div>
+            <div class="spex">
+                NT 2,600</div>
+            <div class="spex">
+                NT 2,700</div>
+            <div class="spex">
+                NT 2,800</div>
+            <div class="spex">
+                NT 2,900</div>
+            <div class="spex">
+                NT 3,000</div>
+            <div class="spex">
+                NT 3,100</div>
+            <div class="spex">
+                NT 3,200</div>
+            <div class="spex">
+                NT 3,300</div>
+            <div class="spex">
+                NT 3,400</div>
+            <div class="spex">
+                NT 3,500</div>
+            <div class="spex">
+                NT 3,600</div>
+            <div class="spex">
+                NT 3,700</div>
+            <div class="spex">
+                NT 3,800</div>
+            <div class="spex">
+                NT 3,900</div>
+            <div class="spex">
+                NT 4,000</div>
+            <div class="spex">
+                NT 4,100</div>
+            <div class="spex">
+                NT 4,200</div>
+            <div class="spex">
+                NT 4,310</div>
+            <div class="spex">
+                NT 4,410</div>
+            <div class="spex">
+                NT 4,520</div>
+            <div class="spex">
+                NT 4,620</div>
+            <div class="spex">
+                NT 4,730</div>
+            <div class="spex">
+                NT 4,830</div>
+            <div class="spex">
+                NT 4,940</div>
+            <div class="spex">
+                NT 5,040</div>
+            <div class="spex">
+                NT 5,150</div>
+            <div class="spex">
+                NT 5,250</div>
+            <div class="spex">
+                NT 5,343</div>
+            <div class="spex">
+                NT 5,436</div>
+            <div class="spex">
+                NT 5,529</div>
+            <div class="spex">
+                NT 5,622</div>
+            <div class="spex">
+                NT 5,715</div>
+            <div class="spex">
+                NT 5,808</div>
+            <div class="spex">
+                NT 5,901</div>
+            <div class="spex">
+                NT 5,994</div>
+            <div class="spex">
+                NT 6,087</div>
+            <div class="spex">
+                NT 6,180</div>
+            <div class="spex">
+                NT 6,273</div>
+            <div class="spex">
+                NT 6,366</div>
+            <div class="spex">
+                NT 6,459</div>
+            <div class="spex">
+                NT 6,552</div>
+            <div class="spex">
+                NT 6,645</div>
+            <div class="spex">
+                NT 6,738</div>
+            <div class="spex">
+                NT 6,831</div>
+            <div class="spex">
+                NT 6,924</div>
+            <div class="spex">
+                NT 7,017</div>
+            <div class="spex">
+                NT 7,110</div>
+            <div class="spex">
+                NT 7,203</div>
+            <div class="spex">
+                NT 7,296</div>
+            <div class="spex">
+                NT 7,389</div>
+            <div class="spex">
+                NT 7,482</div>
+            <div class="spex">
+                NT 7,575</div>
+            <div class="nick">
+                NT 700</div>
+            <div class="nick">
+                NT 850</div>
+            <div class="nick">
+                NT 1,050</div>
+            <div class="nick">
+                NT 1,200</div>
+            <div class="nick">
+                NT 1,350</div>
+            <div class="nick">
+                NT 1,480</div>
+            <div class="nick">
+                NT 1,580</div>
+            <div class="nick">
+                NT 1,710</div>
+            <div class="nick">
+                NT 1,840</div>
+            <div class="nick">
+                NT 1,920</div>
+            <div class="nick">
+                NT 2,000</div>
+            <div class="nick">
+                NT 2,100</div>
+            <div class="nick">
+                NT 2,200</div>
+            <div class="nick">
+                NT 2,300</div>
+            <div class="nick">
+                NT 2,400</div>
+            <div class="nick">
+                NT 2,500</div>
+            <div class="nick">
+                NT 2,600</div>
+            <div class="nick">
+                NT 2,700</div>
+            <div class="nick">
+                NT 2,800</div>
+            <div class="nick">
+                NT 2,900</div>
+            <div class="nick">
+                NT 3,000</div>
+            <div class="nick">
+                NT 3,100</div>
+            <div class="nick">
+                NT 3,200</div>
+            <div class="nick">
+                NT 3,250</div>
+            <div class="nick">
+                NT 3,350</div>
+            <div class="nick">
+                NT 3,450</div>
+            <div class="nick">
+                NT 3,550</div>
+            <div class="nick">
+                NT 3,650</div>
+            <div class="nick">
+                NT 3,750</div>
+            <div class="nick">
+                NT 3,800</div>
+            <div class="nick">
+                NT 3,900</div>
+            <div class="nick">
+                NT 4,000</div>
+            <div class="nick">
+                NT 4,100</div>
+            <div class="nick">
+                NT 4,150</div>
+            <div class="nick">
+                NT 4,250</div>
+            <div class="nick">
+                NT 4,350</div>
+            <div class="nick">
+                NT 4,450</div>
+            <div class="nick">
+                NT 4,550</div>
+            <div class="nick">
+                NT 4,650</div>
+            <div class="nick">
+                NT 4,750</div>
+            <div class="nick">
+                NT 4,800</div>
+            <div class="nick">
+                NT 4,900</div>
+            <div class="nick">
+                NT 5,000</div>
+            <div class="nick">
+                NT 5,100</div>
+            <div class="nick">
+                NT 5,200</div>
+            <div class="nick">
+                NT 5,300</div>
+            <div class="nick">
+                NT 5,350</div>
+            <div class="nick">
+                NT 5,450</div>
+            <div class="nick">
+                NT 5,550</div>
+            <div class="nick">
+                NT 5,600</div>
+            <div class="nick">
+                NT 5,700</div>
+            <div class="nick">
+                NT 5,800</div>
+            <div class="nick">
+                NT 5,900</div>
+            <div class="nick">
+                NT 6,000</div>
+            <div class="nick">
+                NT 6,100</div>
+            <div class="nick">
+                NT 6,200</div>
+            <div class="nick">
+                NT 6,250</div>
+            <div class="nick">
+                NT 6,350</div>
+            <div class="nick">
+                NT 6,450</div>
+            <div class="nick">
+                NT 6,550</div>
+            <div class="nick">
+                NT 6,650</div>
+            <div class="nick">
+                NT 6,750</div>
+            <div class="nick">
+                NT 6,850</div>
+            <div class="nick">
+                NT 6,900</div>
+            <div class="nick">
+                NT 7,000</div>
+            <div class="nick">
+                NT 7,100</div>
+            <div class="nick">
+                NT 7,200</div>
+            <div class="nick">
+                NT 7,300</div>
+            <div class="nick">
+                NT 7,400</div>
+            <div class="nick">
+                NT 7,450</div>
+            <div class="nick">
+                NT 7,550</div>
+            <div class="nick">
+                NT 7,650</div>
+            <div class="nick">
+                NT 7,750</div>
+            <div class="nick">
+                NT 7,850</div>
+            <div class="nick">
+                NT 7,950</div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="js/calc_shipping.js"></script>
