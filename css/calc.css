@@ -162,3 +162,7 @@ p.text {
     display: inline-block;
     padding: 0 5px;
 }
+
+.text__delete{
+	text-decoration: line-through;
+}
