@@ -1,7 +1,19 @@
 $(function () {
+    //匯率
+    var Rate = 0;
+    $.ajax({
+        url: 'https://api.coinbase.com/v2/exchange-rates?currency=USD',
+        method: "GET"
+    }).done(function ({
+        data: {
+            rates: {
+                TWD
+            }
+        }
+    }) {
+        Rate = TWD
+    });
     $('.calulate_01').on('click', function () {
-        //匯率
-        var Rate = 33.0;
 
         //代買費
         var Fee = 1.03;

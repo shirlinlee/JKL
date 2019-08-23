@@ -9,59 +9,68 @@
     <link rel="stylesheet" href="css/init.css" />
     <link rel="stylesheet" href="css/calc.css" />
     <title>JKL - 運費試算</title>
+    <script src="//cdn.jsdelivr.net/npm/bluebird@3.5.5/js/browser/bluebird.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <script src="js/data/shipping.js"></script>
+    <script src="js/shipping.js"></script>
 </head>
 
 <body>
-    <div class="wrapper wrapper_02" id="app">
+    <div class="wrapper wrapper_02" id="app" style="display: none;" v-show="true">
         <h1>
             <!-- 國際運費試算器 -->
         </h1>
         <div class="text">
             請選擇單位：</div>
-        <select class="volume_select">
-            <option selected="selected" value="0">吋(INCH)</option>
-            <option value="1">公分(CM)</option>
+        <select class="volume_select" v-model="selectedVolume">
+            <option v-for="(volume, index) in unitVolume" :value="volume.value">
+                {{volume.text}}
+            </option>
         </select>
-
-        <input class="length" placeholder="長" type="number" />X
-        <input class="width" placeholder="寬" type="number" />X
-        <input class="height" placeholder="高" type="number" />
+        <input class="length" placeholder="長" type="number" min="0" v-model="length" />X
+        <input class="width" placeholder="寬" type="number" min="0" v-model="width" />X
+        <input class="height" placeholder="高" type="number" min="0" v-model="height" />
 
         <br />
         <div class="text">
             請選擇單位：</div>
-        <select class="weight_select">
-            <option selected="selected" value="0">磅(Lbs)</option>
-            <option value="1">公斤(Kg)</option>
+        <select class="weight_select" v-model="selectedWeight">
+            <option v-for="(weight, index) in unitWeight" :value="weight.value">
+                {{weight.text}}
+            </option>
         </select>
-
-        <input class="weight" placeholder="重量" type="number" />
+        <input class="weight" placeholder="重量" type="number" min="0" v-model="weight" />
 
         <br />
-        <div class="calulate_02">
+        <div class="calulate_02" @click.prevent="clickEstimate">
             試算</div>
         <br />
-        <span style="color: #666666; font-size: xx-small;"><i>體積磅數=</i></span><br />
-        <div class="v_result rr">
+        <span style="color: #666666; font-size: xx-small;"><i>體積磅數<span v-if="selectedPlan === 0">（不計）</span> =</i></span><br />
+        <div class="v_result rr" :class="{ text__delete: selectedPlan === 0 }">
+            {{computedVolume}}
         </div>
         <br />
-        <span style="color: #666666; font-size: xx-small;"><i>重量磅數=</i></span><br />
+        <span style="color: #666666; font-size: xx-small;"><i>重量磅數 =</i></span><br />
         <div class="w_result rr">
+            {{computedWeight}}
         </div>
         <div class="text">
             國際運費：</div>
         <div class="total">
+            {{computedShippingCost}}
         </div>
-        <select class="store_select">
-            <option selected="selected" value="0">加州</option>
-            <option value="1">免稅州</option>
+        <select class="store_select" v-model="selectedPlan">
+            <option v-for="(plan, index) in shippingPlan" :value="plan.value">
+                {{plan.text}}
+            </option>
         </select>
-
+<!-- 
         <br />
         <div>
             <br />
             <br />
-            <br /></div>
+            <br />
+        </div>
         <div style="display: none;">
             <div class="spex">
                 NT 380</div>
@@ -363,7 +372,7 @@
                 NT 7,850</div>
             <div class="nick">
                 NT 7,950</div>
-        </div>
+        </div> -->
 
     </div>
 
@@ -371,6 +380,3 @@
 </body>
 
 </html>
-
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script src="js/calc_shipping.js"></script>
