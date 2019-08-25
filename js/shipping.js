@@ -17,18 +17,22 @@ var Shipping = {
 			},
 			computed: {
 				computedVolume: function() {
-                    // 計算 體積磅數
+					// 計算 體積磅數
 					const rateVolume = this.unitVolume[this.selectedVolume].rate;
-					const volume = Math.ceil(
-						(this.length * this.width * this.height * rateVolume) / 139
+					const length = Math.ceil(this.length);
+					const width = Math.ceil(this.width);
+					const height = Math.ceil(this.height);
+					const result = Math.ceil(
+						(length * width * height * rateVolume) / 139
 					);
-					return volume;
+					return result;
 				},
 				computedWeight: function() {
-                    // 計算 磅數
+					// 計算 磅數
 					const rateWeight = this.unitWeight[this.selectedWeight].rate;
-					const weight = Math.ceil(this.weight * rateWeight);
-					return weight;
+					const weight = Math.ceil(this.weight);
+					const result = Math.ceil(weight * rateWeight);
+					return result;
 				},
 				computedShippingPound: function() {
 					// 體積磅數 與 重量磅數 兩者的取最大值
