@@ -1,0 +1,100 @@
+body, html {
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+img {
+    max-width: 100%;
+}
+
+*:focus {
+    outline: none;
+}
+
+.mb,
+.pad {
+    display: none;
+}
+
+.pc {
+    display: inline-block;
+}
+
+.poA {
+    position: absolute;
+}
+
+.f15 {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.W100 {
+    width: 100%;
+}
+
+.W25 {
+    width: 25%;
+    display: inline-block;
+}
+
+.W33 {
+    width: 33.3333%;
+    display: inline-block;
+}
+
+.W50 {
+    width: 50%;
+    display: inline-block;
+}
+
+.W940 {
+    width: 100%;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn {
+ 
+}
+
+.title {
+    line-height: 1.3;
+    padding-bottom: 15px;
+    font-size: 24px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sec {
+    padding-top: 60px; 
+}
+
+@media (min-width: 769px) {
+   
+    
+}
+
+
+@media (max-width: 768px) {
+    .pad {
+        display: inline-block;
+    }
+   
+    
+}
+
+@media (max-width: 600px) {
+    .pc {
+        display: none;
+    }
+    .mb {
+        display: inline-block;
+    }
+    
+}

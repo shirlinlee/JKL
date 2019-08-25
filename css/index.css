@@ -1,0 +1,42 @@
+#kv {
+    position: relative;
+}
+
+.types, .brands {
+    display: inline-block;
+    margin: 0 -10px 0;
+    width: calc(100% + 20px);
+}
+
+.types>div, .brands>div{
+    float: left;
+    padding: 10px;
+}
+
+.brands h3 {
+    font-weight: normal;
+    padding: 8px 0 4px;
+    text-align: left;
+    font-size: 16px;
+    display: block;
+    height: 55px;
+    max-height: 55px;
+    line-height: 1.4;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.brands p {
+    color: #888;
+    font-size: 14px;
+
+}
+ 
+iframe {
+    height: 460px;
+}
+
+
+

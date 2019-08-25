@@ -20,31 +20,40 @@
         <h1>
             <!-- 國際運費試算器 -->
         </h1>
-        <div class="text">
-            請選擇單位：</div>
-        <select class="volume_select" v-model="selectedVolume">
-            <option v-for="(volume, index) in unitVolume" :value="volume.value">
-                {{volume.text}}
-            </option>
-        </select>
-        <input class="length" placeholder="長" type="number" min="0" v-model="length" />X
-        <input class="width" placeholder="寬" type="number" min="0" v-model="width" />X
-        <input class="height" placeholder="高" type="number" min="0" v-model="height" />
+
+        <div class="text">體積</div>
+        <div class="select_wrap box160">
+            <select class="volume_select W100" v-model="selectedVolume">
+                <option v-for="(volume, index) in unitVolume" :value="volume.value">
+                    {{volume.text}}
+                </option>
+            </select>
+            <i class="arrow down"></i>
+        </div>
+        
+        <input class="length box60" placeholder="長" type="number" min="0" v-model="length" />X
+        <input class="width box60" placeholder="寬" type="number" min="0" v-model="width" />X
+        <input class="height box60" placeholder="高" type="number" min="0" v-model="height" />
+
+
+        
+        <div class="text">重量</div>
+        <div class="select_wrap box160">
+            <select class="weight_select W100" v-model="selectedWeight">
+                <option v-for="(weight, index) in unitWeight" :value="weight.value">
+                    {{weight.text}}
+                </option>
+            </select>
+            <i class="arrow down"></i>
+        </div>
+            
+        <input class="weight box60" placeholder="重量" type="number" min="0" v-model="weight" />
 
         <br />
-        <div class="text">
-            請選擇單位：</div>
-        <select class="weight_select" v-model="selectedWeight">
-            <option v-for="(weight, index) in unitWeight" :value="weight.value">
-                {{weight.text}}
-            </option>
-        </select>
-        <input class="weight" placeholder="重量" type="number" min="0" v-model="weight" />
-
-        <br />
-        <div class="calulate_02" @click.prevent="clickEstimate">
+        <div class="calulate_02 btn" @click.prevent="clickEstimate">
             試算</div>
         <br />
+        <hr>
         <span style="color: #666666; font-size: xx-small;"><i>體積磅數<span v-if="selectedPlan === 0">（不計）</span> =</i></span><br />
         <div class="v_result rr" :class="{ text__delete: selectedPlan === 0 }">
             {{computedVolume}}
