@@ -4,12 +4,40 @@
 	font-family: sans-serif, "微軟正黑體";
 }
 
-.box160 {
-	max-width: 160px;
+h1 {
+	padding-top: 10px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.f24 {
+	font-size: 24px;
+}
+
+.f_blue {
+	color: #4a90e2;
+} 
+
+.f_b {
+	font-weight: bold;
+}
+
+.box140 {
+	max-width: 140px;
+}
+
+.box120 {
+	max-width: 120px;
 }
 
 .box60 {
-	max-width: 60px;
+	max-width: 57px;
+}
+
+.box60 + span {
+	line-height: 60px;
 }
 
 .select_wrap {
@@ -29,6 +57,19 @@
 	transform: translate(-12px, -50%) rotate(45deg);
 }
 
+.marginRight0{
+	margin-right: 0;
+}
+
+.result_area {
+	padding-top: 20px;
+}
+
+.result_area p,
+.result_area span {
+	display: inline-block;
+	line-height: 33px;
+} 
 
 input, select {
 	color: #666;
@@ -70,29 +111,10 @@ input {
 .wrapper_02 {
 	max-width: 400px;
 	text-align: left;
+	padding: 0 0 0 20px;
 }
 
-/* .wrapper_02 input {
-    height: 45px;
-    line-height: 45px;
-    margin: 4px 6px;
-    -webkit-appearance: none;
-    width: 60px;
-    border: 1px solid #B3B3B3;
-	padding: 0 6px;
-	box-sizing: border-box;
-	text-align: center;
-} */
 
-/* .wrapper_02 select {
-    height: 45px;
-    line-height: 45px;
-    margin: 4px 6px;
-    border: 1px solid #B3B3B3;
-    padding: 0 6px;
-	vertical-align: middle;
-	 
-}*/
 .text {
     padding: 15px 0 5px;
 }
@@ -121,13 +143,17 @@ input {
 .wrapper_02 div.total {
     height: 45px;
     line-height: 45px;
-    margin: 4px 6px;
-    width: 120px;
+    margin: 4px 6px 0 0;
+    width: 150px;
     border: 1px solid #B3B3B3;
     padding: 0 6px;
     vertical-align: middle;
     display: inline-block;
     background: #fff;
+}
+
+.store_select {
+	width: 120px;
 }
 
 p.text {
@@ -142,4 +168,32 @@ p.text {
 
 .text__delete{
 	text-decoration: line-through;
+}
+
+input.weight.box60 {
+    max-width: 80px;
+}
+
+@media (max-width: 600px) {
+	.f24 {
+		font-size: 20px;
+	}
+	.box140 {
+		max-width: calc(100% - 169px);
+	}
+
+	.box120 {
+		max-width: 100px;
+	}
+
+	.box60 {
+		max-width: 40px;
+	}
+	.wrapper_02 {
+		padding-right: 20px;
+	}
+	input, select {
+		height: 45px;
+		padding: 0 4px;
+	}
 }

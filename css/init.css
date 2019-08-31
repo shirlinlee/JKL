@@ -51,7 +51,7 @@ img {
 
 .W940 {
     width: 100%;
-    max-width: 940px;
+    max-width: 980px;
     margin-left: auto;
     margin-right: auto;
     display: inline-block;
@@ -72,21 +72,11 @@ img {
 }
 
 .sec {
-    padding-top: 60px; 
+    padding-top: 60px;
+    display: inline-block;
 }
 
 @media (min-width: 769px) {
-   
-    
-}
-
-
-@media (max-width: 768px) {
-    .pad {
-        display: inline-block;
-    }
-   
-    
 }
 
 @media (max-width: 600px) {
@@ -96,5 +86,25 @@ img {
     .mb {
         display: inline-block;
     }
+    .W25 {
+        width: 50%;
+    }
+    .sec {
+        padding-top: 30px;
+    }
+    .W33 {
+        width: 100%;
+    }
+    .title {
+        font-size: 22px;
+    }
     
+}
+
+@media (max-width: 414px) {
+    .W940 {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
 }

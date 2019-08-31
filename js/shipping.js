@@ -14,6 +14,7 @@ var Shipping = {
 				width: '',
 				height: '',
 				weight: '',
+				noTitle: false,
 			},
 			computed: {
 				computedVolume: function() {
@@ -69,8 +70,13 @@ var Shipping = {
 					}
 				},
 			},
-			created: function() {},
-			mounted: function() {},
+			created: function() {
+				console.log(window.location.hash)
+				if(window.location.hash==='#notitle') this.noTitle = true;
+ 			},
+			mounted: function() {
+
+			},
 			methods: {
 				toTWLocalePrice: function(price) {
 					return parseInt(price, 10).toLocaleString('zh-TW', {
