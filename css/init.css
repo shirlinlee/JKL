@@ -3,6 +3,19 @@ body, html {
     width: 100%;
     position: relative;
 }
+.container {
+    width: 100% !important;
+    padding: 0;
+    margin: 0;
+}
+
+.page-style { 
+    padding: 0;
+}
+
+h1 {
+    display: none;
+}
 
 img {
     max-width: 100%;
