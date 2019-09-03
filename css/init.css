@@ -1,9 +1,17 @@
 body, html {
-    text-align: center;
+    
     width: 100%;
     position: relative;
 }
-.container {
+#app {
+    text-align: center;
+}
+
+#app * {
+    vertical-align: top;
+}
+
+.container.content-controller {
     width: 100% !important;
     padding: 0;
     margin: 0;
