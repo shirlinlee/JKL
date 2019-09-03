@@ -3,9 +3,6 @@ body, html {
     width: 100%;
     position: relative;
 }
-#app {
-    text-align: center;
-}
 
 #app * {
     vertical-align: top;
@@ -15,6 +12,7 @@ body, html {
     width: 100% !important;
     padding: 0;
     margin: 0;
+    text-align: center;
 }
 
 .page-style { 

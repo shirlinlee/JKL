@@ -4,6 +4,14 @@
 	font-family: sans-serif, "微軟正黑體";
 }
 
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 h1 {
 	padding-top: 10px;
 }
@@ -110,7 +118,7 @@ input {
 
 .wrapper_02 {
 	max-width: 400px;
-	text-align: left;
+	text-align: left !important;
 	padding: 0 0 0 20px;
 }
 
