@@ -40,18 +40,21 @@ var Product = {
 					return result2;
 				},
 				cost: function() {
-					console.log(this.productPrice, this.shipping);
 					return Number(this.productPrice) + Number(this.shipping);
 				},
 				totalCost: function() {
 					return this.cost * Number(this.currentFee);
 				},
 				resultHtml: function() {
-					return `$ <font class='f_blue f_b f24'>${this.cost} </font> x ${
-						this.currentFee
-					}(當前匯率) x 1 (免代買費)=<br> NT$ <font class="f_blue f_b f24">${
-						this.totalCost
-					}</font> 元整 + 國際運費`;
+					if( Number(this.productPrice) !== 0) {
+
+						return `$ <font class='f_blue f_b f24'>${this.cost} </font> x ${
+							this.currentFee
+						}(當前匯率) x 1 (免代買費)=<br> NT$ <font class="f_blue f_b f24">${
+							this.totalCost
+						}</font> 元整 + 國際運費`;
+					}
+					return `<span class="f_grey">請填寫商品總價</span>    `
 				},
 			},
 			mounted: function() {
