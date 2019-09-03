@@ -19,7 +19,8 @@ body, html {
     padding: 0;
 }
 
-h1 {
+
+.container.content-controller h1 {
     display: none;
 }
 

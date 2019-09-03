@@ -47,11 +47,11 @@ var Product = {
 					return this.cost * Number(this.currentFee);
 				},
 				resultHtml: function() {
-					return `$${this.cost} x ${
+					return `$ <font class='f_blue f_b f24'>${this.cost} </font> x ${
 						this.currentFee
-					}(當前匯率)x1 (免代買費)=<br> NT$<span>${
+					}(當前匯率) x 1 (免代買費)=<br> NT$ <font class="f_blue f_b f24">${
 						this.totalCost
-					}</span>元整 + 國際運費`;
+					}</font> 元整 + 國際運費`;
 				},
 			},
 			mounted: function() {

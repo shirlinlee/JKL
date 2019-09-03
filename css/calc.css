@@ -40,6 +40,10 @@ h1 {
 	max-width: 120px;
 }
 
+.box100 {
+	max-width: 100px;
+}
+
 .box60 {
 	max-width: 57px;
 }
@@ -111,6 +115,11 @@ input {
 	font-size: 17px;
 }
 
+.W50.text {
+	float: left;
+	line-height: 55px;
+}
+
 .wrapper {
     line-height: 1.5;
     font-family: sans-serif, "微軟正黑體";
@@ -180,6 +189,15 @@ p.text {
 
 input.weight.box60 {
     max-width: 80px;
+}
+
+input.box100 {
+    max-width: calc(100% - 75px);
+    margin: 4px 0 0 0;
+}
+
+.result {
+	line-height: 40px;
 }
 
 @media (max-width: 600px) {
