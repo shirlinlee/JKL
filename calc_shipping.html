@@ -32,9 +32,9 @@
             <i class="arrow down"></i>
         </div>
         
-        <input class="length box60" placeholder="長" type="number" min="0" v-model="length" onfocus="myFunction()"/><span>X</span>
-        <input class="width box60" placeholder="寬" type="number" min="0" v-model="width" onfocus="myFunction()" /><span>X</span>
-        <input class="height box60 marginRight0" placeholder="高" type="number" min="0" v-model="height"  onfocus="myFunction()"/>
+        <input class="length box60" placeholder="長" type="number" min="0" v-model="length" /><span>X</span>
+        <input class="width box60" placeholder="寬" type="number" min="0" v-model="width" /><span>X</span>
+        <input class="height box60 marginRight0" placeholder="高" type="number" min="0" v-model="height" />
 
         <div class="text f_b">重量</div>
         <div class="select_wrap box140">
@@ -46,7 +46,7 @@
             <i class="arrow down"></i>
         </div>
             
-        <input class="weight box60" placeholder="重量" type="number" min="0" v-model="weight" onfocus="myFunction()" />
+        <input class="weight box60" placeholder="重量" type="number" min="0" v-model="weight" />
 
         <br />
         <div class="calulate_02 btn" @click.prevent="clickEstimate">
@@ -84,9 +84,15 @@
 
 </html>
 
+<script
+src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+crossorigin="anonymous"></script>
+
 <script>
-    
-    function myFunction(event) {
-        console.log('focus');
-    }
+    $(function(){
+        $('body').on('click touchstart',function(e){
+            console.log(e.target);
+        });
+    });
 </script>
