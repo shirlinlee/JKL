@@ -31,17 +31,20 @@
                 </div>
                 <div class="W100">
                     <div class="text f_b">體積</div>
-                        <div class="select_wrap box120">
-                            <select class="volume_select W100" v-model="selectedVolume">
-                                <option v-for="(volume, index) in unitVolume" :value="volume.value">
-                                    {{volume.text}}
-                                </option>
-                            </select>
-                            <i class="arrow down"></i>
-                        </div>
-                    <input class="length box60" placeholder="長" type="number" min="0" v-model="length" /><span>X</span>
-                    <input class="width box60" placeholder="寬" type="number" min="0" v-model="width" /><span>X</span>
-                    <input class="height box60 marginRight0" placeholder="高" type="number" min="0" v-model="height" />
+                    <div class="select_wrap box120">
+                        <select class="volume_select W100" v-model="selectedVolume">
+                            <option v-for="(volume, index) in unitVolume" :value="volume.value">
+                                {{volume.text}}
+                            </option>
+                        </select>
+                        <i class="arrow down"></i>
+                    </div>
+                    <div class="mb_wrap">
+                        <input class="length box60" placeholder="長" type="number" min="0" v-model="length" /><span>X</span>
+                        <input class="width box60" placeholder="寬" type="number" min="0" v-model="width" /><span>X</span>
+                        <input class="height box60 marginRight0" placeholder="高" type="number" min="0" v-model="height" />
+                    </div>    
+                    
                 </div>
                     
                 <div class="W100">
@@ -55,7 +58,7 @@
                         <i class="arrow down"></i>
                     </div>
                         
-                    <input class="weight box60" placeholder="重量" type="number" min="0" v-model="weight" />
+                    <input class="weight box60 noMR" placeholder="重量" type="number" min="0" v-model="weight" />
                 </div>   
 
                 <div class="W100">
@@ -71,7 +74,7 @@
                 
             </div>
 
-            <div class="calc_txt border">
+            <div class="calc_txt border intro_pc">
                 <div class="text f_b">試算說明</div>
                 <p class="f15">
                     從出貨網站代購所需之總金額　(商品原價、出貨網站收取的運費、加州消費稅)
@@ -104,7 +107,7 @@
             <div class="W100">
                 <span class="text f_b f_d_grey">國際運費</span>
                 <div class="shipping">
-                    <input class=" W50" type="text" readonly :value="computedShippingCost">
+                    <input class="t_right W50" type="text" readonly :value="computedShippingCost">
                     <div class="select_wrap W50">
                         <select class="W100" v-model="selectedPlan">
                             <option v-for="(plan, index) in shippingPlan" :value="plan.value">
@@ -116,18 +119,28 @@
                 </div>    
             </div>
             <div class="W100 f_d_grey">
-                $ {{(productPrice)?productPrice:0}} x <font> {{currentRate}} </font>(當前匯率) x {{ buyingFee }} (免代買費)
+                $ {{(productPrice)?productPrice:0}} x <font> {{currentFee}} </font>(當前匯率) {{ (productPrice < 175) ? '+':'x' }} {{ buyingFee }}
             </div>
             <div class="W100">
                 <span class="text f_b f_d_grey">代買費用</span>
-                <input class="total box200 noMR" type="number" name="total" min="0" v-model="buyingFeeNumber" />
+                <input class="total box200 noMR t_right" type="text" name="total" v-model="buyingFeeNumber" readonly />
             </div>
 
             <footer class="W100">
                 <p class="f15 f_left">總計</p>
-                <p class="f20 f_right">NT {{totalCost}}</p>
+                <p class="f20 f_right">NT ${{totalCost}}</p>
             </footer>
         
+        </div>
+
+        <div class="calc_txt border intro_mb">
+            <div class="text f_b">試算說明</div>
+            <p class="f15">
+                從出貨網站代購所需之總金額　(商品原價、出貨網站收取的運費、加州消費稅)
+                商品原價1%的代購手續費
+                國際運費(海/空運)　(大件海運商品另有 關稅、台灣端的貨運費)
+                → (美國當地購買價格) + (商品原價5%手續費) + (國際運費) = 代購商品總金額
+            </p>  
         </div>
         
         

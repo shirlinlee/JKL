@@ -46,6 +46,10 @@ img {
     position: absolute;
 }
 
+.t_right {
+    text-align: right;
+}
+
 .f15 {
     font-size: 15px;
     line-height: 1.7;
