@@ -263,6 +263,11 @@ footer *{
 	display: none;
 }
 
+.mb_wrap {
+    display: inline-block;
+    /* float: right; */
+}
+
 @media (max-width: 768px) {
 	footer {
 		position: fixed;
