@@ -4,8 +4,8 @@ var Product = {
 		Product.instanceVue = new Vue({
 			el: '#app',
 			data: {
-				productPrice: 0,
-				shipping: 0,
+				productPrice: '',
+				shipping: '',
 				currentRate: 33,
 			},
 			watch: {
