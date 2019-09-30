@@ -17,11 +17,36 @@
             height: 100%;
 
         }
-        iframe {
-            margin-top: 50px;
-            height: calc(100% - 50px);
+        .hidden_scroll {
+            margin: 50px auto;
+            width: 100%;
+            max-width: 940px;
+            overflow: hidden;
+            margin-bottom: 50px;
         }
-       
+        iframe {
+            height: 800px;
+            width: calc(100% + 30px);
+            margin: 0 -30px -25px 0;
+        }
+        @media (max-width: 768px) {
+            iframe {
+                height: calc(100vh - 85px);
+                width: 100%;
+                margin: 0;
+
+            }
+            .hidden_scroll{
+                margin-bottom: 0
+            }
+        }
+
+        @media (max-width: 599px) {
+            iframe {
+                height: calc(100vh - 52px);
+            }
+        }
+            
         p {
             position: fixed;
             height: 50px;
@@ -39,29 +64,111 @@
             width: 100%;
             text-transform: capitalize;
         }
-        .iframe_wrap {
-            height: 100%;
-        }
-        #top {
-            position: fixed;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            background-color: #fff;
-            border-bottom: 1px solid #ccc;
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            display: inline-block;
             width: 100%;
+            background-color: #f8f8f8;
+            margin-bottom: 0;
+        }
+        .col-sm-6 {
+            width: 50%;
+            float: left;
+        }
+        #footer>.container ul {
+            list-style: none;
+            margin: 20px 0px 20px 0px;
+            padding: 0px;
+        }
+        .sociallinks {
+            text-align: right;
+        }
+        #footer>.container .row ul>li>a {
+            color: #a99d63;
+        }
+        #fixed-menu-container {
+            top: 0;
+            right: 0;
+            text-align: center;
+            height: auto;
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            position: fixed;
+            z-index: 1100;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            height: 51px;
+            line-height: 51px;
         }
     </style>
 
 </head>
 
 <body>
-    <div id="top">JKL</div>
-    <div class="iframe_wrap">
-        <iframe id="calc" src="calc.html"  scrolling="yes"
-        width="100%" frameborder="0" >
-        </iframe>
+    <div id="Main">
+        <div id="fixed-menu-container" class="mobile-revamp-navigation ">
+            <!-- mobile logo -->
+            <div class="mobile-logo">
+                JKL
+            </div>
+        </div>
+        <div class="hidden_scroll">
+            <iframe src="calc.html" height="100%" width="100%" scrolling="yes"  frameborder="0"></iframe>
+        </div>
+        
+        <div id="footer">
+            <div class="container">
+                <div class="row">
+                <div class="col-sm-6">
+                    <!-- Footer Links -->
+                    <ul>
+                        <li link-highlight="/about">
+                            <a link-highlight="/about" href="/about" target="_self" ng-non-bindable="">商店介紹</a>
+                        </li>
+                        <li link-highlight="/pages/faq">
+                            <a link-highlight="/pages/faq" href="/pages/faq" target="" ng-non-bindable="">常見問題</a>
+                        </li>
+                        <li link-highlight="/pages/shopjkl-tc">
+                            <a link-highlight="/pages/shopjkl-tc" href="/pages/shopjkl-tc" target="" ng-non-bindable="">條款與細則</a>
+                        </li>
+                        <li link-highlight="/pages/privacy-policy">
+                            <a link-highlight="/pages/privacy-policy" href="/pages/privacy-policy" target="" ng-non-bindable="">隱私權政策</a>
+                        </li>
+                    </ul>
+                    <!-- End Footer Links -->
+            
+                </div>
+            
+                <div class="col-sm-6 sociallinks">
+                    
+                    <!-- Payment Social Networks -->
+                    <ul>
+                        <li class="global-secondary icon-">
+                        </li><li link-highlight="https://www.facebook.com/ShopJKL/">
+                            <a link-highlight="https://www.facebook.com/ShopJKL/" href="https://www.facebook.com/ShopJKL/" target="_blank" ng-non-bindable="">FB 粉絲專頁</a>
+                        </li>
+                        
+                        <li class="global-secondary icon-">
+                        </li><li link-highlight="/pages/taiwancontact">
+                            <a link-highlight="/pages/taiwancontact" href="/pages/taiwancontact" target="" ng-non-bindable="">台灣商務聯繫</a>
+                        </li>
+                        
+                    </ul>
+                    <!-- End Social Networks -->
+            
+                </div>
+            
+                </div><!--row-->
+            </div>
+          
+        </div>
+
     </div>
+  
         
 </body>
 </html>

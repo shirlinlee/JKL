@@ -83,15 +83,15 @@ var Shipping = {
 				// },
 				totalCost() {
 					// console.log(Number(this.computedShippingCost.replace(/[^0-9.-]+/g,"")), this.computedShippingCost);
-					return Math.floor(Number(this.computedShippingCost.replace(/[^0-9.-]+/g,""))) + Number(this.buyingFeeNumber.replace('NT ',''));
+					return Math.floor(Number(this.computedShippingCost.replace(/[^0-9.-]+/g,""))) + Number(this.buyingFeeNumber);
 				},
 				buyingFee() {
 				
 					if ( this.productPrice < 175 ) {
 						return 300;
-					} else if ( this.productPrice >= 175 && this.productPrice < 501 ) {
+					} else if ( this.productPrice >= 175 && this.productPrice <= 500 ) {
 						return 1.03;
-					} else if ( this.productPrice >= 501 && this.productPrice < 1001 ) {
+					} else if ( this.productPrice > 500 && this.productPrice <= 1000 ) {
 						return 1.01;
 					}
 					return  1
@@ -99,9 +99,9 @@ var Shipping = {
 				buyingFeeNumber() {
 					
 					if ( this.productPrice < 175 ) {
-						return 'NT '+ Math.floor( this.productPrice * this.currentFee + this.buyingFee );
+						return Math.floor( this.productPrice * this.currentFee + this.buyingFee );
 					}
-					return 'NT '+Math.floor(this.productPrice * this.currentFee * this.buyingFee);
+					return Math.floor(this.productPrice * this.currentFee * this.buyingFee);
 				}
 			},
 			watch: {

@@ -50,9 +50,18 @@ img {
     text-align: right;
 }
 
+.f13 {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
 .f15 {
     font-size: 15px;
     line-height: 1.7;
+}
+
+.f18 {
+    font-size: 18px;
 }
 
 .f20 {
@@ -94,6 +103,10 @@ img {
 
 .f_d_grey {
     color:#4a4a4a
+}
+
+.f_red {
+    color: #dd0000;
 }
 
 .title {
