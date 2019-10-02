@@ -59,7 +59,8 @@ h1 {
 }
 
 .box60 + span {
-	line-height: 48px;
+	/* line-height: 48px; */
+	vertical-align: middle;
 }
 
 .wrapper {
@@ -123,8 +124,8 @@ h1 {
 
 input, select {
 	color: #666;
-	height: 45px;
-	line-height: 45px;
+	height: 36px;
+	line-height: 36px;
 	width: 100%;
 	margin: 0 6px 0 0;
 	-webkit-appearance: none;
@@ -330,7 +331,7 @@ footer *{
 }
 @media (max-width: 599px) {
 	input, select {
-		height: 45px;
+		height: 36px;
 		/* padding: 0 4px; */
 	}
 
