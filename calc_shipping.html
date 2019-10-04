@@ -7,12 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/init.css" />
-    <link rel="stylesheet" href="css/calc.css" />
+    <link rel="stylesheet" href="css/index_shipping.css" />
     <title>JKL - 運費試算</title>
     <script src="//cdn.jsdelivr.net/npm/bluebird@3.5.5/js/browser/bluebird.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
     <script src="js/data/shipping.js"></script>
-    <script src="js/shipping.js"></script>
+    <script src="js/index_shipping.js"></script>
     
 </head>
 
@@ -22,7 +22,7 @@
             國際運費試算器
         </h1>
 
-        <div class="text f_b">體積</div>
+        <div class="text f_b W100">體積</div>
         <div class="select_wrap box140">
             <select class="volume_select W100" v-model="selectedVolume">
                 <option v-for="(volume, index) in unitVolume" :value="volume.value">
@@ -36,7 +36,7 @@
         <input class="width box60" placeholder="寬" type="number" min="0" v-model="width" /><span>X</span>
         <input class="height box60 marginRight0" placeholder="高" type="number" min="0" v-model="height" />
 
-        <div class="text f_b">重量</div>
+        <div class="text f_b W100">重量</div>
         <div class="select_wrap box140">
             <select class="weight_select W100" v-model="selectedWeight">
                 <option v-for="(weight, index) in unitWeight" :value="weight.value">
