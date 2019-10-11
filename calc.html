@@ -128,7 +128,7 @@
                 </div>
 
                 <p class="W100 f_red f13">
-                    商品金額${{productPrice}} x {{currentFee}}(當前匯率) {{ (productPrice < 175) ? '+':'x' }} ${{ buyingFee }} + ${{computedShippingCost}}國際運費=總共代買費用 ${{totalCost}}
+                    商品金額${{productPrice}} x {{currentFee}}(當前匯率) {{ (productPrice < 175) ? '+':'x' }} ${{ buyingFee }} + {{(computedShippingCost!=='0')? `$${computedShippingCost}`:''}} 國際運費=總共代買費用 ${{totalCost}}
                 </p>
 
                 <footer class="W100">
